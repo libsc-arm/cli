@@ -1,6 +1,8 @@
 import argparse
 import logging
 import sys
+import subprocess
+
 from typing import List, Optional
 
 LOG_FILENAME = 'libscARM-tracebacks.log'
@@ -52,7 +54,8 @@ def main(options: Optional[List[str]]=None):
         print('libscARM 0.0.1')
 
     if args.init:
-        print('Running init script')
+        subprocess.run(['chmod', 'u+x', 'scripts/init.sh'])
+        subprocess.run(['./scripts/init.sh'])
 
     if args.load:
         print('Loading test suite')

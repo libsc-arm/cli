@@ -1,2 +1,2 @@
 # cli
-Command line interface for libscARM
+Command line interface for libsc-arm

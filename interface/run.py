@@ -3,6 +3,7 @@ import logging
 import sys
 import subprocess
 
+from .version import LIBSCARM_VERSION
 from typing import List, Optional
 
 LOG_FILENAME = 'guineapig-tracebacks.log'
@@ -51,7 +52,7 @@ def main(options: Optional[List[str]]=None):
     args = parse_args(argv)
 
     if args.version:
-        print('libscARM 0.0.1')
+        print('libsc-arm ', LIBSCARM_VERSION)
 
     if args.init:
         subprocess.run(['chmod', 'u+x', 'scripts/init.sh'])

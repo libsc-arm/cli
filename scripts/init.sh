@@ -12,7 +12,7 @@ build_conn() {
 
 write_conf_file() {
     echo "Generating configuration file ..."
-	get_conf >> configuration.ini
+    get_conf >> configuration.ini
     echo "Successfully generated configuration file"
 }
     

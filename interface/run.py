@@ -5,7 +5,7 @@ import subprocess
 
 from typing import List, Optional
 
-LOG_FILENAME = 'libscARM-tracebacks.log'
+LOG_FILENAME = 'guineapig-tracebacks.log'
 logging.basicConfig(filename=LOG_FILENAME, level=logging.DEBUG)
 
 def parse_args(argv: List[str]):
@@ -58,7 +58,8 @@ def main(options: Optional[List[str]]=None):
         subprocess.run(['./scripts/init.sh'])
 
     if args.load:
-        print('Loading test suite')
+        subprocess.run(['chmod', 'u+x', 'conn/setup.sh'])
+        subprocess.run(['./conn/setup.sh'])
 
     if args.run:
         print('Running test suite')
